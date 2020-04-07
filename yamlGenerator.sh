@@ -5,6 +5,7 @@ cp -r ${JENKINS_HOME}/helm_template ${JENKINS_HOME}/${JOB_NAME}_helm_charts
 fi
 
 rm ${JENKINS_HOME}/${JOB_NAME}_helm_charts/cicd_sample/templates/*.yaml
+cp ${JENKINS_HOME}/helm_template/cicd_sample/templates/configmap.yaml ${JENKINS_HOME}/${JOB_NAME}_helm_charts/cicd_sample/templates/${JOB_NAME}-configmap.yaml
 
 if [ -f "${JOB_NAME}-image.yaml" ]; then
 rm ${JOB_NAME}-image.yaml
